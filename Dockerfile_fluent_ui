@@ -1,5 +1,5 @@
 FROM ruby:2.7.0-slim
-
+# For loging, see https://docs.fluentd.org/deployment/fluentd-ui
 RUN apt-get update && apt-get install -y \
     build-essential \
     libssl-dev \

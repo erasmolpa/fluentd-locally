@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # example ./cli.sh fluentd --version
-docker exec -it fluentd-tool "$@"
+nerdctl exec -it fluentd-tool "$@"

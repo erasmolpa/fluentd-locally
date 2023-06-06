@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install -y \
 
 COPY Gemfile /fluentd/
 COPY fluent.conf /fluentd/
-COPY fluent-ui.conf /fluentd/
 
 WORKDIR /fluentd
 
@@ -22,7 +21,7 @@ RUN gem install bundler
 RUN bundle install
 
 
-EXPOSE 24224 24220 9292 
+EXPOSE 24224 24220 9292
 
-CMD ["sh", "-c", "fluentd -c /fluentd/fluent.conf && fluentd-ui -c /fluentd/fluent-ui.conf"]
-
+CMD ["sh", "-c", "fluentd -c /fluentd/fluent.conf"]
+ENTRYPOINT [ "fluentd-ui", "start" ]

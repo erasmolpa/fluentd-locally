@@ -14,7 +14,7 @@ build-nerdctl:
 	nerdctl build -t $(IMAGE_NAME) .
 
 run-nerdctl:
-	nerdctl run -d -p 24224:24224 -p 24220:24220 --name $(IMAGE_NAME) $(IMAGE_NAME)
+	nerdctl run -d -p 24224:24224 -p 24220:24220 -p 9292:9292 --name $(IMAGE_NAME) $(IMAGE_NAME)
 
 stop-nerdctl:
 	nerdctl stop $(IMAGE_NAME)

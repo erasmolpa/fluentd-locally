@@ -24,4 +24,4 @@ RUN bundle install
 EXPOSE 24224 24220 9292
 
 CMD ["sh", "-c", "fluentd -c /fluentd/fluent.conf"]
-ENTRYPOINT [ "fluentd-ui", "start" ]
+#ENTRYPOINT [ "fluentd-ui", "start" ]
